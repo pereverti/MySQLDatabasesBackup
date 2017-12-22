@@ -23,6 +23,7 @@ namespace Backups
             BackupSelectedDatabase(ConfigurationManager.AppSettings["FAQ"]);
             BackupSelectedDatabase(ConfigurationManager.AppSettings["Traccar"]);
             BackupSelectedDatabase(ConfigurationManager.AppSettings["Xwiki"]);
+            BackupSelectedDatabase(ConfigurationManager.AppSettings["Firefly"]);
         }
 
         private static void BackupSelectedDatabase(string databaseName)
