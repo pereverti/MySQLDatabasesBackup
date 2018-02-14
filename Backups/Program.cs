@@ -17,13 +17,19 @@ namespace Backups
 
         static void Main(string[] args)
         {
-            BackupSelectedDatabase(ConfigurationManager.AppSettings["KodiVideos"]);
-            BackupSelectedDatabase(ConfigurationManager.AppSettings["KodiMusic"]);
-            BackupSelectedDatabase(ConfigurationManager.AppSettings["PasteBin"]);
-            BackupSelectedDatabase(ConfigurationManager.AppSettings["FAQ"]);
-            BackupSelectedDatabase(ConfigurationManager.AppSettings["Traccar"]);
-            BackupSelectedDatabase(ConfigurationManager.AppSettings["Xwiki"]);
-            BackupSelectedDatabase(ConfigurationManager.AppSettings["Firefly"]);
+            using (new Impersonation(ConfigurationManager.AppSettings["NetworkDomain"], ConfigurationManager.AppSettings["NetworkUser"], ConfigurationManager.AppSettings["NetworkPassword"]))
+            {
+                if (!Directory.Exists(ConfigurationManager.AppSettings["MySqlBackupFolder"]))
+                    Directory.CreateDirectory(ConfigurationManager.AppSettings["MySqlBackupFolder"]);
+
+                BackupSelectedDatabase(ConfigurationManager.AppSettings["KodiVideos"]);
+                BackupSelectedDatabase(ConfigurationManager.AppSettings["KodiMusic"]);
+                BackupSelectedDatabase(ConfigurationManager.AppSettings["PasteBin"]);
+                BackupSelectedDatabase(ConfigurationManager.AppSettings["FAQ"]);
+                BackupSelectedDatabase(ConfigurationManager.AppSettings["Traccar"]);
+                BackupSelectedDatabase(ConfigurationManager.AppSettings["Xwiki"]);
+                BackupSelectedDatabase(ConfigurationManager.AppSettings["Firefly"]);
+            }
         }
 
         private static void BackupSelectedDatabase(string databaseName)
