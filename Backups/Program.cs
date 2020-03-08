@@ -29,6 +29,7 @@ namespace Backups
                 BackupSelectedDatabase(ConfigurationManager.AppSettings["Traccar"]);
                 BackupSelectedDatabase(ConfigurationManager.AppSettings["Xwiki"]);
                 BackupSelectedDatabase(ConfigurationManager.AppSettings["Firefly"]);
+                BackupSelectedDatabase(ConfigurationManager.AppSettings["Hassio"]);
             }
         }
 
