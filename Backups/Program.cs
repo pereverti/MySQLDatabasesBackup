@@ -25,12 +25,16 @@ namespace Backups
                 BackupSelectedDatabase(ConfigurationManager.AppSettings["KodiVideos"]);
                 BackupSelectedDatabase(ConfigurationManager.AppSettings["KodiMusic"]);
                 BackupSelectedDatabase(ConfigurationManager.AppSettings["PasteBin"]);
-                BackupSelectedDatabase(ConfigurationManager.AppSettings["FAQ"]);
+                //BackupSelectedDatabase(ConfigurationManager.AppSettings["FAQ"]);
                 BackupSelectedDatabase(ConfigurationManager.AppSettings["Traccar"]);
-                BackupSelectedDatabase(ConfigurationManager.AppSettings["Xwiki"]);
+                //BackupSelectedDatabase(ConfigurationManager.AppSettings["Xwiki"]);
                 //BackupSelectedDatabase(ConfigurationManager.AppSettings["Firefly"]);
-                BackupSelectedDatabase(ConfigurationManager.AppSettings["Hassio"]);
-                BackupSelectedDatabase(ConfigurationManager.AppSettings["Airsonic"]);
+                //BackupSelectedDatabase(ConfigurationManager.AppSettings["Hassio"]);
+                //BackupSelectedDatabase(ConfigurationManager.AppSettings["Airsonic"]);
+                BackupSelectedDatabase(ConfigurationManager.AppSettings["Bookstack"]);
+                BackupSelectedDatabase(ConfigurationManager.AppSettings["Ombi"]);
+                BackupSelectedDatabase(ConfigurationManager.AppSettings["OmbiSettings"]);
+                BackupSelectedDatabase(ConfigurationManager.AppSettings["OmbiExternal"]);
             }
         }
 
